@@ -1,5 +1,27 @@
 use std::io;
 
+//1. To create an object in Rust, you define a custom struct and instantiate it by providing values
+// for its fields. Unlike Traditional OOP languages, Rust doesn;t use classes; instead, you define
+// data in structs and attach behaviors using implementation blocks
+struct Room {
+    name: &'static str,
+    n: u64,
+    e: u64,
+    s: u64,
+    w: u64,
+}
+
+//2. To create an instance of the struct, declare a variable and define the values for each field.
+static HUB: Room = Room {
+    name: "Houston",
+    n: 1,
+    e: 2,
+    s: 3,
+    w: 4,
+};
+
+impl Room {}
+
 fn main() {
     println!("Please enter your name:");
 
