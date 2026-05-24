@@ -9,6 +9,7 @@ pub struct Room {
     e: i32,
     s: i32,
     w: i32,
+    //???
 }
 
 //2. To create an instance of the struct, declare a variable and define the values for each field.
