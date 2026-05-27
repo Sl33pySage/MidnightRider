@@ -55,18 +55,19 @@ fn main() {
     let _map: [Room; 4] = [STARTER_ROOM, FOREST_ROOM, CITY_ROOM, LIBRARY_ROOM];
 
     // Start of the game???
-    println!("{}", STARTER_ROOM.name);
-    print!(
-        "Where do you want to go? North:{}\nEast:{}\nSouth:{}\nWest:{}\n",
-        STARTER_ROOM.n, STARTER_ROOM.e, STARTER_ROOM.s, STARTER_ROOM.w
-    );
+
     println!("Please enter your name:");
 
-    let mut name: String = String::new();
+    let mut player_name: String = String::new();
 
     io::stdin()
-        .read_line(&mut name)
+        .read_line(&mut player_name)
         .expect("Failed to read line");
 
-    println!("Hello, {name}");
+    println!("Hello, {player_name}");
+    println!("You start in: {}", STARTER_ROOM.name);
+    print!(
+        "Where do you want to go?\nNorth:{}\nEast:{}\nSouth:{}\nWest:{}\n",
+        STARTER_ROOM.n, STARTER_ROOM.e, STARTER_ROOM.s, STARTER_ROOM.w
+    );
 }
