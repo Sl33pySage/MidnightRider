@@ -3,6 +3,7 @@ use std::io;
 //1. To create an object in Rust, you define a custom struct and instantiate it by providing values
 // for its fields. Unlike Traditional OOP languages, Rust doesn;t use classes; instead, you define
 // data in structs and attach behaviors using implementation blocks
+#[derive(Debug)] // Allows for printing with {:?}
 struct Room {
     name: &'static str,
     n: i32,
@@ -14,7 +15,7 @@ struct Room {
 fn main() {
     //2. To create an instance of the struct, declare a variable and define the values for each field.
     const STARTER_ROOM: Room = Room {
-        name: "Plato's cave",
+        name: "Plato's Cave",
         n: 1,
         e: 2,
         s: 3,
@@ -52,8 +53,9 @@ fn main() {
      *           City/CITY_ROOM ----- Library
      *  */
 
-    let _map: [Room; 4] = [STARTER_ROOM, FOREST_ROOM, CITY_ROOM, LIBRARY_ROOM];
-
+    let _map = [STARTER_ROOM, FOREST_ROOM, CITY_ROOM, LIBRARY_ROOM];
+    let a = &_map[0];
+    println!("{:?}", a);
     // Start of the game???
 
     println!("Please enter your name:");
