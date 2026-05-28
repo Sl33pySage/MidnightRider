@@ -66,8 +66,22 @@ fn main() {
         .read_line(&mut player_name)
         .expect("Failed to read line");
 
-    println!("Hello, {player_name}");
-    println!("You start in: {}", STARTER_ROOM.name);
+    println!("Are you sure you want to be named: {player_name}");
+    io::stdin()
+        .read_line(&mut player_name)
+        .expect("Failed to read line");
+
+    println!("I don't think that fits you...");
+    io::stdin()
+        .read_line(&mut player_name)
+        .expect("Failed to read line");
+
+    println!("You shall be named Gobby");
+    io::stdin()
+        .read_line(&mut player_name)
+        .expect("Failed to read line");
+    println!("Too bad Gobby :3");
+    println!("You start in {} Gobby...", STARTER_ROOM.name);
     print!(
         "Where do you want to go?\nNorth:{}\nEast:{}\nSouth:{}\nWest:{}\n",
         STARTER_ROOM.n, STARTER_ROOM.e, STARTER_ROOM.s, STARTER_ROOM.w
