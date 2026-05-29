@@ -80,7 +80,7 @@ fn main() {
     io::stdin()
         .read_line(&mut player_name)
         .expect("Failed to read line");
-    println!("Too bad Gobby :3");
+    println!("Too bad Gobby...");
     println!("You start in {} Gobby...", STARTER_ROOM.name);
     print!(
         "Where do you want to go?\nNorth:{}\nEast:{}\nSouth:{}\nWest:{}\n",
