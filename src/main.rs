@@ -44,16 +44,6 @@ const LIBRARY_ROOM: Room = Room {
     w: -1,
 };
 
-impl Room {
-    // Associated function (constructor)
-    fn new(name: &'static str) -> Room {
-        Room { name, e, n, s, w };
-    }
-
-    // Method (takes &self)
-    //fn (&self)
-}
-
 fn init_game() {
     let _map = [STARTER_ROOM, FOREST_ROOM, CITY_ROOM, LIBRARY_ROOM];
     let position = 0;
@@ -92,11 +82,7 @@ fn start_game() {
     );
 }
 
-fn look_around() {
-    println!("You are in {}", _map[position].name);
-}
-
 fn main() {
-    let c = Room::new("houston");
-    //2. To create an instance of the struct, declare a variable and define the values for each field.
+    init_game();
+    start_game();
 }
