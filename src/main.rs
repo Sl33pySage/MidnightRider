@@ -12,52 +12,56 @@ struct Room {
     w: i32,
 }
 
-fn main() {
-    //2. To create an instance of the struct, declare a variable and define the values for each field.
-    const STARTER_ROOM: Room = Room {
-        name: "Plato's Cave",
-        n: 1,
-        e: 2,
-        s: 3,
-        w: 4,
-    };
+const STARTER_ROOM: Room = Room {
+    name: "Plato's Cave",
+    n: 1,
+    e: 2,
+    s: 3,
+    w: 4,
+};
 
-    const FOREST_ROOM: Room = Room {
-        name: "Forest",
-        n: -1,
-        e: 2,
-        s: -1,
-        w: 1,
-    };
+const FOREST_ROOM: Room = Room {
+    name: "Forest",
+    n: -1,
+    e: 2,
+    s: -1,
+    w: 1,
+};
 
-    const CITY_ROOM: Room = Room {
-        name: "City",
-        n: 0,
-        e: -1,
-        s: 3,
-        w: -1,
-    };
+const CITY_ROOM: Room = Room {
+    name: "City",
+    n: 0,
+    e: -1,
+    s: 3,
+    w: -1,
+};
 
-    const LIBRARY_ROOM: Room = Room {
-        name: "Library",
-        n: 4,
-        e: -1,
-        s: -1,
-        w: -1,
-    };
+const LIBRARY_ROOM: Room = Room {
+    name: "Library",
+    n: 4,
+    e: -1,
+    s: -1,
+    w: -1,
+};
 
-    /*              GAMEMAP
-     *
-     *          Start/Plato's Cave -- Forest
-     *               |
-     *           City/CITY_ROOM ----- Library
-     *  */
+impl Room {
+    // Associated function (constructor)
+    fn new(name: &'static str) -> Room {
+        Room { name, e, n, s, w };
+    }
 
+    // Method (takes &self)
+    //fn (&self)
+}
+
+fn init_game() {
     let _map = [STARTER_ROOM, FOREST_ROOM, CITY_ROOM, LIBRARY_ROOM];
-    let a = &_map[0];
+    let position = 0;
+    let a = &_map[position];
     println!("{:?}", a);
-    // Start of the game???
+}
 
+fn start_game() {
     println!("Please enter your name:");
 
     let mut player_name: String = String::new();
@@ -81,9 +85,18 @@ fn main() {
         .read_line(&mut player_name)
         .expect("Failed to read line");
     println!("Too bad Gobby...");
-    println!("You start in {} Gobby...", STARTER_ROOM.name);
+    println!("You start in {}, Gobby...", STARTER_ROOM.name);
     print!(
-        "Where do you want to go?\nNorth:{}\nEast:{}\nSouth:{}\nWest:{}\n",
+        "Where do you want to go now?\nNorth:{}\nEast:{}\nSouth:{}\nWest:{}\n",
         STARTER_ROOM.n, STARTER_ROOM.e, STARTER_ROOM.s, STARTER_ROOM.w
     );
+}
+
+fn look_around() {
+    println!("You are in {}", _map[position].name);
+}
+
+fn main() {
+    let c = Room::new("houston");
+    //2. To create an instance of the struct, declare a variable and define the values for each field.
 }
